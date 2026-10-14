@@ -1,3 +1,6 @@
+<img width="288" height="180" alt="wynik1" src="https://github.com/user-attachments/assets/3b8fdb16-131a-452f-a56d-64d2d308f38b" />
+<img width="267" height="180" alt="wynik3" src="https://github.com/user-attachments/assets/82b08224-d7f7-4c5e-8ce5-d7ad78effc2e" />
+<img width="258" height="179" alt="wynik2" src="https://github.com/user-attachments/assets/07800b02-e0f0-4b38-87f9-37c54e9fca20" />
 # Map Freshness Audit — Multi-Modal Spatial & Vision Pipeline
 
 > Automated pipeline for detecting outdated road signage ("Ghost Signs") and attribute discrepancies in navigation databases by combining **Tiled YOLOv8 Computer Vision** with **GPS Probe Telemetry** and **Precision GIS Filtering**.
