@@ -1,5 +1,3 @@
-# Hackathon Project
->⚠️ Data Privacy Note: This project was developed during the HERE Technologies Hackathon. Due to data licensing and confidentiality agreements, proprietary datasets (HERE Probe Data) are not included in this repository. Only the processing pipeline, model inference logic (YOLOv8 + SAHI), and system architecture are presented.
 # Map Freshness Audit — Multi-Modal Spatial & Vision Pipeline
 
 > Automated pipeline for detecting outdated road signage ("Ghost Signs") and attribute discrepancies in navigation databases by combining **Tiled YOLOv8 / SAHI Computer Vision** with **GPS Probe Telemetry** and **Precision GIS Filtering**.
@@ -10,25 +8,29 @@
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-EPSG:32635-139C5A?style=for-the-badge)
 ![Folium](https://img.shields.io/badge/Folium-Interactive_GIS-77B829?style=for-the-badge)
 
----
-
-## 🎯 Problem Statement: The "Ghost Sign" Risk
-Navigation databases frequently suffer from outdated speed limit attributes—physical signs are removed or modified after roadworks, but remain in the digital map for months. This creates critical friction for **Intelligent Speed Assistance (ISA)** and autonomous driving systems, leading to phantom braking and loss of driver trust.
-
-Instead of relying on manual reports, our system implements a continuous **Double-Check Pipeline**: validating what the map database states against both **street-level computer vision** and **real-world driver behavior (GPS telemetry)**.
+> ⚠️ **Data Privacy & Licensing Note:** This project was developed by team **Geologic** during the **HERE Technologies Hackathon (May 2026)** at AGH University of Krakow. Due to data licensing agreements, proprietary datasets (raw street-level imagery, HERE Probe Data, and road network GeoJSONs) and API keys are excluded from this repository.
 
 ---
 
-## 🏗️ System Architecture & Pipeline
+## 🎯 Cel projektu: Problem „Ghost Signs”
+Bazy nawigacyjne często zawierają nieaktualne ograniczenia prędkości – znaki fizycznie znikają po remontach dróg, ale pozostają w bazie danych przez miesiące. Powoduje to błędy w systemach **Intelligent Speed Assistance (ISA)** i niepotrzebne hamowanie autonomicznych systemów.
 
-```text
-[Street-Level Imagery] ──► (01. Tiled YOLOv8 + Empty-Tile Skip + NMS)
-                                      │
-                                      ▼
-[Image GPS Metadata]   ──► (02. EventId Integration & Label Parsing)
-                                      │
-                                      ▼
-[Map Signs + GPS Probes]─► (03. UTM EPSG:32635 Spatial Join + Directional Gate + ECS)
-                                      │
-                                      ▼
-                           (04. Folium Interactive HTML Audit Map)
+Nasz potok (**Double-Check Pipeline**) automatycznie weryfikuje bazę mapową, zestawiając ją z **detekcją obrazu (YOLOv8 + kafelkowanie)** oraz **rzeczywistym zachowaniem kierowców (GPS Probe Data)**.
+
+---
+
+## 📂 Zawartość repozytorium
+
+* 📄 **[`map-freshness-audit-presentation.pdf`](./map-freshness-audit-presentation.pdf)** – Pełna prezentacja projektu z wizualizacjami i opisem architektury.
+* 💻 **[`01_detekcja_yolo.py`](./01_detekcja_yolo.py)** – Kafelkowanie zdjęć ulicznych ($640 \times 640$, overlap $10\%$), odrzucanie jednolitych kafli nieba/asfaltu (`PROG_WARIANCJI = 8.0`), detekcja YOLOv8 oraz własna implementacja algorytmu NMS (`apply_nms`).
+* 🔗 **[`02_laczenie_metadanych.py`](./02_laczenie_metadanych.py)** – Łączenie wyników detekcji z metadanymi GPS i kątem kamery (`front_bearing`) po kluczu `eventId`.
+* 📐 **[`03_confidence_scores.py`](./03_confidence_scores.py)** – Obliczanie dystansu sferycznego (Haversine) w buforze $45\text{ m}$, filtrowanie kąta (`MAX_BEARING_DIFF = 60`) i wyliczanie ważonego wskaźnika pewności dla znaków.
+* 🌍 **[`04_audyt_geopandas_probe.py`](./04_audyt_geopandas_probe.py)** – Geoprzetwarzanie w układzie metrycznym **UTM (`EPSG:32635`)**, wyznaczanie korytarza trasy ($80\text{ m}$), łączenie przestrzenne (`sjoin`) z telemetrią `Probe Data` w pasie ruchu oraz wyliczanie wieloźródłowego **Existence Confidence Score (ECS)**.
+* 🗺️ **[`05_mapa_folium.py`](./05_mapa_folium.py)** – Generator interaktywnej mapy HTML w `Folium` z obracanymi ikonami kierunkowymi znaków (`bearing`), reverse-geocodingiem i kartami podsumowującymi (`OK`, `ERROR`, `MISSING`).
+
+---
+
+## 👥 Zespół Geologic
+* **Mateusz Grodzki**
+* **Kamila Bodziony**
+* **Aleksandra Staroch**
