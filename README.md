@@ -1,4 +1,4 @@
-[HERE_Audit_Final_Map.html](https://github.com/user-attachments/files/33426184/HERE_Audit_Final_Map.html)# Map Freshness Audit — Multi-Modal Spatial & Vision Pipeline
+(https://github.com/user-attachments/files/33426184/HERE_Audit_Final_Map.html)# Map Freshness Audit — Multi-Modal Spatial & Vision Pipeline
 
 > Automated pipeline for detecting outdated road signage ("Ghost Signs") and attribute discrepancies in navigation databases by combining **Tiled YOLOv8 Computer Vision** with **GPS Probe Telemetry** and **Precision GIS Filtering**.
 
@@ -7,6 +7,7 @@
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Tiled_Inference-00FFFF?style=for-the-badge)
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-EPSG:32635-139C5A?style=for-the-badge)
 ![Folium](https://img.shields.io/badge/Folium-Interactive_GIS-77B829?style=for-the-badge)
+[HERE_Audit_Final_Map.html]
 
 > ⚠️ **Data Privacy & Licensing Note:** This project was developed by team **Geologic** during the **HERE Technologies Hackathon (May 2026)** at AGH University of Krakow. Due to data licensing agreements, proprietary datasets (raw street-level imagery, HERE Probe Data, and road network GeoJSONs) are excluded from this repository.
 
