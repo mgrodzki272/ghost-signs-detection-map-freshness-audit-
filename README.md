@@ -2,7 +2,7 @@
 
 > Automated pipeline for detecting outdated road signage ("Ghost Signs") and attribute discrepancies in navigation databases by combining **Tiled YOLOv8 Computer Vision** with **GPS Probe Telemetry** and **Precision GIS Filtering**.
 
-[![Presentation PDF](https://img.shields.io/badge/Presentation-Full_Slide_Deck_(PDF)-red?style=for-the-badge&logo=adobeacrobatreader)](./map-freshness-audit-presentation.pdf)
+[![Presentation PDF](https://img.shields.io/badge/Presentation-Full_Slide_Deck_(PDF)-red?style=for-the-badge&logo=adobeacrobatreader)](./map-freshness-audit-presentation.pdf.pdf)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Tiled_Inference-00FFFF?style=for-the-badge)
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-EPSG:32635-139C5A?style=for-the-badge)
