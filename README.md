@@ -15,8 +15,9 @@
 Bazy nawigacyjne często zawierają nieaktualne ograniczenia prędkości – znaki fizycznie znikają po remontach dróg, ale pozostają w bazie danych przez miesiące. Powoduje to błędy w systemach **Intelligent Speed Assistance (ISA)** i niepotrzebne hamowanie autonomicznych systemów.
 
 Nasz potok (**Double-Check Pipeline**) automatycznie weryfikuje bazę mapową, zestawiając ją z **detekcją obrazu (YOLOv8 + kafelkowanie)** oraz **rzeczywistym zachowaniem kierowców (GPS Probe Data)**.
-[![Presentation PDF](https://img.shields.io/badge/Presentation-Full_Slide_Deck_(PDF)-red?style=for-the-badge&logo=adobeacrobatreader)](./map-freshness-audit-presentation.pdf.pdf)
 ---
+[![Presentation PDF](https://img.shields.io/badge/Presentation-Full_Slide_Deck_(PDF)-red?style=for-the-badge&logo=adobeacrobatreader)](./map-freshness-audit-presentation.pdf.pdf)
+
 
 ## 📊 Przykładowe wyniki audytu (Interaktywna mapa Folium)
 [![Interactive Map](https://img.shields.io/badge/Interactive_Map-Audit_Dashboard-blue?style=for-the-badge&logo=googlemaps)](https://github.com/user-attachments/files/33426184/HERE_Audit_Final_Map.html)
