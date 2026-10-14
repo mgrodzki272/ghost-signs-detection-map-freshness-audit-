@@ -1,5 +1,5 @@
 # Hackathon Project
-⚠️ Data Privacy Note: This project was developed during the HERE Technologies Hackathon. Due to data licensing and confidentiality agreements, proprietary datasets (HERE Probe Data) are not included in this repository. Only the processing pipeline, model inference logic (YOLOv8 + SAHI), and system architecture are presented.
+>⚠️ Data Privacy Note: This project was developed during the HERE Technologies Hackathon. Due to data licensing and confidentiality agreements, proprietary datasets (HERE Probe Data) are not included in this repository. Only the processing pipeline, model inference logic (YOLOv8 + SAHI), and system architecture are presented.
 # Map Freshness Audit — Multi-Modal Spatial & Vision Pipeline
 
 > Automated pipeline for detecting outdated road signage ("Ghost Signs") and attribute discrepancies in navigation databases by combining **Tiled YOLOv8 / SAHI Computer Vision** with **GPS Probe Telemetry** and **Precision GIS Filtering**.
@@ -9,8 +9,6 @@
 ![YOLOv8](https://img.shields.io/badge/YOLOv8-Tiled_Inference-00FFFF?style=for-the-badge)
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-EPSG:32635-139C5A?style=for-the-badge)
 ![Folium](https://img.shields.io/badge/Folium-Interactive_GIS-77B829?style=for-the-badge)
-
-> ⚠️ **Data Privacy & Licensing Note:** This project was developed by team **Geologic** during the **HERE Technologies Hackathon (May 2026)** at AGH University of Krakow. Due to data licensing agreements, proprietary datasets (raw street-level imagery, HERE Probe Data, and road network GeoJSONs) and API keys are excluded from this repository. Only the processing pipeline, spatial algorithms, and aggregated visual case studies are presented.
 
 ---
 
